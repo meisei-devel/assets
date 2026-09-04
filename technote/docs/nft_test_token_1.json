@@ -1,6 +1,6 @@
 {
   "description": "This is NFT token JSON for test only.",
-  "external_url": "https://meiseid.jp/technote/docs/nft_test_token.html",
-  "image": "https://meiseid.jp/technote/docs/nft_test_token_1.jpg",
+  "external_url": "https://meiseid.jp/technote/assets/docs/nft_test_token.html",
+  "image": "https://meiseid.jp/technote/assets/docs/nft_test_token_1.jpg",
   "name": "nft_test_token"
 }
