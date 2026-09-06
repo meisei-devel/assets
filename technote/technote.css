@@ -998,3 +998,206 @@ button,input,select,textarea{font:inherit}
     padding-right:16px !important;
   }
 }
+
+
+/* =========================================================
+   Technote top / list heading layout refinement v27
+========================================================= */
+
+/*
+ * 技術ノートトップ:
+ * 十分な横幅では「技術ノート」と説明文を横並びにし、
+ * 説明文は右側で縦センタリング。
+ */
+.technote-hero,
+.technote-top-header,
+.page-intro{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.technote-hero > *,
+.technote-top-header > *,
+.page-intro > *{
+  min-width:0;
+}
+
+.technote-hero h1,
+.technote-top-header h1,
+.page-intro h1{
+  flex:0 0 auto;
+  margin-bottom:0 !important;
+}
+
+.technote-hero p,
+.technote-top-header p,
+.page-intro p{
+  margin:0 !important;
+  text-align:right;
+}
+
+/*
+ * カテゴリ一覧 / キーワード検索結果:
+ * 見出しは記事詳細タイトルと同程度に縮小。
+ */
+.list-heading h1,
+.archive-header h1,
+.search-header h1,
+.category-header h1,
+.keyword-header h1{
+  font-size:clamp(1.5rem, 2.1vw, 2rem) !important;
+  line-height:1.3 !important;
+}
+
+/*
+ * 見出し + 件数メッセージは、広い画面では横並び。
+ */
+.list-heading,
+.archive-header,
+.search-header,
+.category-header,
+.keyword-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.list-heading .result-count,
+.archive-header .result-count,
+.search-header .result-count,
+.category-header .result-count,
+.keyword-header .result-count,
+.list-heading p,
+.archive-header p,
+.search-header p,
+.category-header p,
+.keyword-header p{
+  margin:0 !important;
+  flex:0 0 auto;
+  text-align:right;
+}
+
+/* 狭い画面では自然に縦積みへ戻す */
+@media(max-width:760px){
+  .technote-hero,
+  .technote-top-header,
+  .page-intro,
+  .list-heading,
+  .archive-header,
+  .search-header,
+  .category-header,
+  .keyword-header{
+    display:block;
+  }
+
+  .technote-hero p,
+  .technote-top-header p,
+  .page-intro p,
+  .list-heading .result-count,
+  .archive-header .result-count,
+  .search-header .result-count,
+  .category-header .result-count,
+  .keyword-header .result-count,
+  .list-heading p,
+  .archive-header p,
+  .search-header p,
+  .category-header p,
+  .keyword-header p{
+    margin-top:8px !important;
+    text-align:left;
+  }
+}
+
+
+/* =========================================================
+   note-hero title/subtitle layout fix v28
+   実際の article.php マークアップに合わせて修正
+========================================================= */
+
+/* kicker は従来どおり上段 */
+.note-hero .kicker{
+  margin-bottom:8px;
+}
+
+/*
+ * 十分な横幅では
+ *   技術ノート               マシン設定や...
+ *   【Windows】の記事一覧     109件の記事が...
+ * のように横並び＋縦センタリング。
+ */
+.note-hero-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:12px;
+}
+
+.note-hero-title-row h1{
+  flex:0 1 auto;
+  min-width:0;
+  margin:0 !important;
+  line-height:1.25;
+}
+
+/* トップの「技術ノート」は少しだけ存在感を残す */
+.note-hero-title-row h1{
+  font-size:clamp(1.8rem, 2.6vw, 2.6rem) !important;
+}
+
+/* 一覧・検索見出しも巨大化させない */
+.note-hero-title-row .note-hero-sub{
+  flex:0 0 auto;
+  margin:0 !important;
+  color:var(--muted);
+  font-size:.95rem;
+  font-weight:700;
+  line-height:1.5;
+  text-align:right;
+  white-space:nowrap;
+}
+
+/*
+ * カテゴリ / キーワード検索時は、記事詳細タイトル相当まで縮小。
+ * headline は 【...】 を含むので :has() を使わず、
+ * body側の状態に依存しない共通サイズに寄せる。
+ */
+.note-hero-title-row h1{
+  max-width:calc(100% - 260px);
+}
+
+/* 検索ボックス直前に余計な縦余白を作らない */
+.note-hero .search-box{
+  margin-top:0 !important;
+}
+
+/* 狭い画面では自然に縦積み */
+@media(max-width:760px){
+  .note-hero-title-row{
+    display:block;
+    margin-bottom:10px;
+  }
+
+  .note-hero-title-row h1{
+    max-width:none;
+    font-size:clamp(1.55rem, 7vw, 2rem) !important;
+  }
+
+  .note-hero-title-row .note-hero-sub{
+    margin-top:5px !important;
+    text-align:left;
+    white-space:normal;
+    font-size:.88rem;
+  }
+}
+
+/* 
+ * v27で追加した未使用セレクタの影響を打ち消す。
+ * 実際のnote-hero構造ではこちらを正とする。
+ */
+.note-hero > .shell{
+  display:block !important;
+}
