@@ -1273,3 +1273,23 @@ button,input,select,textarea{font:inherit}
     margin-top:5px !important;
   }
 }
+
+
+/* =========================================================
+   v34: article-detail outer spacing = Technote top page
+========================================================= */
+
+/*
+ * Top/list page reference:
+ *   desktop .article-list-section { padding:14px 0 36px; }
+ *   mobile  .article-list-section { padding:10px 0 28px; }
+ */
+.article-detail{
+  padding:14px 0 36px !important;
+}
+
+@media(max-width:760px){
+  .article-detail{
+    padding:10px 0 28px !important;
+  }
+}
