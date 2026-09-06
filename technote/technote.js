@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  /*
+   * Syntax highlighting
+   *
+   * renderer.php 側で language-python / language-c / language-bash ...
+   * を付与しているコードは指定言語で着色。
+   * 言語指定がない旧 <pre><code> は highlight.js の自動判定に任せる。
+   * plaintext/text は意図的に着色しない。
+   */
+  if (window.hljs) {
+    document.querySelectorAll('.article-body pre code').forEach((code) => {
+      if (
+        code.classList.contains('language-text')
+        || code.classList.contains('language-plaintext')
+        || code.classList.contains('nohighlight')
+      ) {
+        return;
+      }
+
+      try {
+        window.hljs.highlightElement(code);
+      } catch (e) {
+        console.warn('highlight.js:', e);
+      }
+    });
+  }
+
   document.querySelectorAll('.search-box').forEach((form) => {
     form.addEventListener('submit', (e) => {
       const input = form.querySelector('input[name="keyword"]');

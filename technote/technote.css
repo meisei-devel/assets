@@ -93,7 +93,7 @@ button,input,select,textarea{font:inherit}
 .code-lang{padding:3px 7px;border-radius:6px;background:#3379c8;color:#fff;font-weight:900}.code-file{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.code-github{margin-left:auto!important;color:#bfd8f5!important;text-decoration:none!important}.code-copy{border:1px solid #52657d;border-radius:6px;background:#162131;color:#fff;font-size:.67rem;cursor:pointer}
 .code-block pre,.article-body>pre{margin:0;padding:18px;overflow:auto;background:#111a25;color:#e5edf6;line-height:1.55;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .article-body>pre{border-radius:10px;margin:1.4em 0}
-.article-note{margin:0 46px 34px;padding:16px 18px;border-radius:12px;background:#f3f8fd;border:1px solid #d9e7f4}.article-note strong{font-size:.85rem}.article-note p{margin:4px 0 0;color:#66788e;font-size:.77rem}
+.article-note{margin:0 46px 34px;padding:8px 12px;border-radius:10px;background:#f3f8fd;border:1px solid #d9e7f4}.article-note strong{font-size:.92rem}.article-note p{margin:0;color:#66788e;font-size:.90rem;line-height:1.5}
 .prev-next{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #edf1f5}
 .prev-next>div{padding:22px 46px}.prev-next .next{text-align:right;border-left:1px solid #edf1f5}.prev-next span{display:block;margin-bottom:5px;color:#8a97a8;font-size:.62rem;font-weight:900;letter-spacing:.12em}.prev-next a{color:var(--blue);font-size:.8rem;font-weight:800}
 .not-found{padding:80px 0}
@@ -394,4 +394,607 @@ button,input,select,textarea{font:inherit}
 }
 @media(max-width:620px){
   .migration-stats-format{grid-template-columns:repeat(2,1fr)}
+}
+
+
+/* =========================================================
+   Article spacing + GitHub-like code cards v20
+========================================================= */
+
+/* 本文はヘッダの罫線直後から始まるくらいまで詰める */
+.article-body{
+  padding-top:12px;
+  padding-bottom:10px;
+}
+.article-body > *:first-child{
+  margin-top:0 !important;
+}
+.article-body > *:last-child{
+  margin-bottom:0 !important;
+}
+
+/* 本文末尾と注意書きの間も最小限に */
+.article-note{
+  margin:6px 46px 24px;
+  padding:7px 11px;
+}
+.article-note p{
+  margin:0;
+}
+
+/* 新コードカード */
+.code-panel,
+.article-body .code-panel{
+  margin:14px 0;
+  overflow:hidden;
+  border:1px solid #d8dee4;
+  border-radius:7px;
+  background:#fff;
+  box-shadow:0 1px 2px rgba(27,31,36,.05);
+}
+
+.code-scroll{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  max-height:680px;
+  overflow:auto;
+  background:#fff;
+}
+
+.code-line-numbers{
+  position:sticky;
+  left:0;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  min-width:48px;
+  padding:10px 0;
+  border-right:1px solid #d8dee4;
+  background:#f6f8fa;
+  color:#6e7781;
+  text-align:right;
+  user-select:none;
+}
+
+.code-line-numbers span{
+  display:block;
+  height:1.62em;
+  padding:0 12px 0 8px;
+  font:13px/1.62 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+}
+
+.code-panel pre,
+.article-body .code-panel pre{
+  margin:0 !important;
+  padding:10px 16px !important;
+  max-height:none;
+  overflow:visible;
+  border:0;
+  border-radius:0;
+  background:#fff !important;
+  color:#24292f;
+  white-space:pre;
+  tab-size:4;
+}
+
+.code-panel pre code,
+.article-body .code-panel pre code{
+  display:block;
+  min-width:max-content;
+  padding:0;
+  border:0;
+  background:transparent !important;
+  color:#24292f;
+  font:13px/1.62 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+}
+
+.code-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:44px;
+  padding:8px 12px 8px 14px;
+  border-top:1px solid #d8dee4;
+  background:#f6f8fa;
+  color:#57606a;
+}
+
+.code-footer-meta{
+  display:flex;
+  min-width:0;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:4px;
+  font-size:.78rem;
+}
+
+.code-footer-meta strong{
+  overflow:hidden;
+  max-width:420px;
+  color:#24292f;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-weight:800;
+}
+
+.code-footer-meta span{
+  color:#6e7781;
+  font-weight:600;
+}
+
+.code-heart{
+  color:#e34c55;
+  font-size:1.05em;
+}
+
+.code-footer-actions{
+  display:flex;
+  flex:0 0 auto;
+  align-items:center;
+  gap:5px;
+}
+
+.code-footer-actions a,
+.code-footer-actions button{
+  appearance:none;
+  padding:5px 7px;
+  border:0;
+  border-radius:5px;
+  background:transparent;
+  color:#57606a;
+  font-size:.72rem;
+  font-weight:800;
+  line-height:1;
+  text-decoration:none !important;
+  cursor:pointer;
+}
+
+.code-footer-actions a:hover,
+.code-footer-actions button:hover{
+  background:#eaeef2;
+  color:#0969da;
+}
+
+.code-footer-actions .code-language{
+  margin-right:3px;
+  padding:3px 6px;
+  border:1px solid #d0d7de;
+  border-radius:999px;
+  background:#fff;
+  color:#57606a;
+  font-size:.61rem;
+  font-weight:800;
+}
+
+.code-cache-note{
+  color:#8a6d3b !important;
+  font-size:.62rem !important;
+}
+
+.code-panel-error{
+  background:#fff8f8;
+  border-color:#f0c9c9;
+}
+.code-load-error{
+  padding:12px 14px;
+  color:#8c3c3c;
+  font-size:.80rem;
+}
+.code-load-error a{
+  color:#0969da;
+}
+
+/* 旧 code-block が残っている場合も極端に暗くしない */
+.code-block{
+  border-color:#d8dee4;
+  background:#fff;
+}
+.code-block pre{
+  background:#fff;
+  color:#24292f;
+}
+
+/* previewも本番と同じ間隔に近づける */
+.preview-paper .article-body{
+  padding-top:12px;
+  padding-bottom:10px;
+}
+
+/* mobile */
+@media(max-width:760px){
+  .article-body{
+    padding-top:10px;
+    padding-bottom:8px;
+  }
+
+  .article-note{
+    margin:5px 22px 20px;
+  }
+
+  .code-line-numbers{
+    min-width:42px;
+  }
+
+  .code-line-numbers span{
+    padding-right:9px;
+    font-size:12px;
+  }
+
+  .code-panel pre,
+  .article-body .code-panel pre{
+    padding:10px 12px !important;
+  }
+
+  .code-panel pre code,
+  .article-body .code-panel pre code{
+    font-size:12px;
+  }
+
+  .code-footer{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .code-footer-actions{
+    align-self:flex-end;
+  }
+}
+
+
+/* =========================================================
+   highlight.js v21
+   GitHub light theme + Technote code-card integration
+========================================================= */
+
+/*
+ * highlight.js の色は spans(.hljs-keyword など)に任せ、
+ * カードの背景・padding・font はTechnote側で統一する。
+ */
+.code-panel pre code.hljs,
+.article-body .code-panel pre code.hljs{
+  padding:0 !important;
+  background:transparent !important;
+  color:#24292f;
+}
+
+/* GitHubテーマ側の背景指定でカードが二重に見えないようにする */
+.code-panel .hljs{
+  background:transparent !important;
+}
+
+/*
+ * コメントを少し読みやすく。
+ * 色分けそのものは github.min.css の指定を尊重。
+ */
+.code-panel .hljs-comment,
+.code-panel .hljs-quote{
+  font-style:italic;
+}
+
+/* 選択時も見やすく */
+.code-panel code::selection,
+.code-panel code *::selection{
+  background:rgba(84,174,255,.28);
+}
+
+/* ハイライト済みでも行高は行番号と完全に合わせる */
+.code-panel pre code.hljs{
+  line-height:1.62;
+}
+
+
+/* =========================================================
+   Code-card spacing refinement v22
+   外枠と内側で余白が二重に見えないよう整理
+========================================================= */
+
+/* カード外側の余白だけ残す */
+.code-panel,
+.article-body .code-panel{
+  padding:0 !important;
+}
+
+/* コード本体の余白は pre 側だけに一本化 */
+.code-scroll{
+  padding:0 !important;
+}
+
+.code-panel pre,
+.article-body .code-panel pre{
+  margin:0 !important;
+  padding:8px 12px !important;
+}
+
+/* highlight.js 自身のpaddingは完全に消す */
+.code-panel pre code,
+.article-body .code-panel pre code,
+.code-panel pre code.hljs,
+.article-body .code-panel pre code.hljs,
+.code-panel .hljs{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* 行番号側もコード本体と同じ上下だけにする */
+.code-line-numbers{
+  padding:8px 0 !important;
+}
+
+
+/* =========================================================
+   Code-card compact horizontal spacing v23
+   横方向の余白を最小限に
+========================================================= */
+
+/* 外側カードは本文幅いっぱいに使う */
+.code-panel,
+.article-body .code-panel{
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding:0 !important;
+}
+
+/* コード本体は必要最低限の余白だけ */
+.code-panel pre,
+.article-body .code-panel pre{
+  padding:6px 8px !important;
+}
+
+/* 行番号欄も細く */
+.code-line-numbers{
+  min-width:34px !important;
+  padding:6px 0 !important;
+}
+
+.code-line-numbers span{
+  padding-left:4px !important;
+  padding-right:7px !important;
+}
+
+/* フッターも横余白を圧縮 */
+.code-footer{
+  padding:6px 8px !important;
+}
+
+.code-footer-meta{
+  gap:3px !important;
+}
+
+.code-footer-actions{
+  gap:3px !important;
+}
+
+.code-footer-actions a,
+.code-footer-actions button{
+  padding:4px 5px !important;
+}
+
+/* モバイルではさらに詰める */
+@media(max-width:760px){
+  .code-panel pre,
+  .article-body .code-panel pre{
+    padding:5px 6px !important;
+  }
+
+  .code-line-numbers{
+    min-width:30px !important;
+  }
+
+  .code-line-numbers span{
+    padding-left:2px !important;
+    padding-right:5px !important;
+  }
+
+  .code-footer{
+    padding:5px 6px !important;
+  }
+}
+
+
+/* =========================================================
+   Page-wide horizontal spacing refinement v24
+   コード枠ではなく記事ページ全体の左右余白を縮小
+========================================================= */
+
+.article-shell{
+  width:min(1180px, calc(100% - 24px)) !important;
+  max-width:1180px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.article-body{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.article-note{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+.code-panel,
+.article-body .code-panel{
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding:0 !important;
+}
+
+.code-panel pre,
+.article-body .code-panel pre{
+  padding:8px 12px !important;
+}
+
+.code-line-numbers{
+  min-width:48px !important;
+  padding:8px 0 !important;
+}
+
+.code-line-numbers span{
+  padding-left:8px !important;
+  padding-right:12px !important;
+}
+
+.code-footer{
+  padding:6px 10px !important;
+}
+
+.code-footer-actions{
+  gap:5px !important;
+}
+
+.code-footer-actions a,
+.code-footer-actions button{
+  padding:4px 6px !important;
+}
+
+@media(max-width:900px){
+  .article-shell{
+    width:calc(100% - 20px) !important;
+  }
+}
+
+@media(max-width:760px){
+  .article-shell{
+    width:calc(100% - 12px) !important;
+  }
+
+  .article-body{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .article-note{
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  .code-panel pre,
+  .article-body .code-panel pre{
+    padding:7px 9px !important;
+  }
+
+  .code-line-numbers{
+    min-width:38px !important;
+  }
+
+  .code-line-numbers span{
+    padding-left:4px !important;
+    padding-right:8px !important;
+  }
+
+  .code-footer{
+    padding:5px 8px !important;
+  }
+}
+
+
+/* =========================================================
+   Fluid article width + local highlight.js v25
+========================================================= */
+
+/*
+ * 1180px固定上限を廃止。
+ * 画面が広がれば記事エリアも追従しつつ、左右には最低限のガターだけ残す。
+ */
+.article-shell{
+  width:calc(100% - clamp(16px, 4vw, 96px)) !important;
+  max-width:none !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+@media(max-width:760px){
+  .article-shell{
+    width:calc(100% - 12px) !important;
+  }
+}
+
+/* =========================================================
+   Article inner spacing + title sizing v26
+   fluid幅は維持しつつ、白背景カード内に適度な余白を戻す
+========================================================= */
+
+/* 記事ヘッダ／本文／注意書きの左右位置を揃える */
+.article-header{
+  padding:26px 32px 18px !important;
+}
+
+.article-header h1{
+  margin-bottom:12px !important;
+  font-size:clamp(1.5rem, 2.1vw, 2rem) !important;
+  line-height:1.42 !important;
+}
+
+.article-body{
+  padding-left:32px !important;
+  padding-right:32px !important;
+}
+
+.article-note{
+  margin-left:32px !important;
+  margin-right:32px !important;
+}
+
+.prev-next > div{
+  padding-left:32px !important;
+  padding-right:32px !important;
+}
+
+/* 中くらいの画面 */
+@media(max-width:900px){
+  .article-header{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+
+  .article-header h1{
+    font-size:clamp(1.42rem, 3.1vw, 1.85rem) !important;
+  }
+
+  .article-body{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+
+  .article-note{
+    margin-left:24px !important;
+    margin-right:24px !important;
+  }
+
+  .prev-next > div{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+}
+
+/* スマホは狭すぎず広すぎず16px */
+@media(max-width:760px){
+  .article-header{
+    padding:22px 16px 16px !important;
+  }
+
+  .article-header h1{
+    font-size:1.42rem !important;
+    line-height:1.45 !important;
+  }
+
+  .article-body{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+
+  .article-note{
+    margin-left:16px !important;
+    margin-right:16px !important;
+  }
+
+  .prev-next > div{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
 }
