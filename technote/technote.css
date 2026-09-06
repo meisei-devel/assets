@@ -1201,3 +1201,75 @@ button,input,select,textarea{font:inherit}
 .note-hero > .shell{
   display:block !important;
 }
+
+
+/* =========================================================
+   note-hero title/subtitle proximity refinement v29
+========================================================= */
+
+/*
+ * 右端へ飛ばさず、タイトルのすぐ隣へ。
+ * 横幅が十分ある時だけ横並び。
+ */
+.note-hero-title-row{
+  justify-content:flex-start !important;
+  gap:14px !important;
+}
+
+.note-hero-title-row h1{
+  flex:0 1 auto;
+  max-width:none !important;
+}
+
+.note-hero-title-row .note-hero-sub{
+  flex:0 0 auto;
+  text-align:left !important;
+  white-space:nowrap;
+}
+
+/* デフォルトの「技術ノート」は以前の大きさへ戻す */
+.note-hero-title-row.is-default-title h1{
+  font-size:clamp(2.2rem, 3.8vw, 3.5rem) !important;
+}
+
+/* カテゴリ / 検索などは小さめを維持 */
+.note-hero-title-row:not(.is-default-title) h1{
+  font-size:clamp(1.5rem, 2.1vw, 2rem) !important;
+}
+
+/* サブ文言はタイトルの中央高さに合わせる */
+.note-hero-title-row .note-hero-sub{
+  align-self:center;
+  margin-top:0 !important;
+}
+
+/* 横幅が足りなければ自然に折り返し */
+@media(max-width:900px){
+  .note-hero-title-row{
+    flex-wrap:wrap;
+    row-gap:6px !important;
+  }
+
+  .note-hero-title-row .note-hero-sub{
+    white-space:normal;
+  }
+}
+
+/* スマホは縦積み */
+@media(max-width:760px){
+  .note-hero-title-row{
+    display:block;
+  }
+
+  .note-hero-title-row.is-default-title h1{
+    font-size:clamp(2rem, 10vw, 2.8rem) !important;
+  }
+
+  .note-hero-title-row:not(.is-default-title) h1{
+    font-size:clamp(1.5rem, 7vw, 2rem) !important;
+  }
+
+  .note-hero-title-row .note-hero-sub{
+    margin-top:5px !important;
+  }
+}
