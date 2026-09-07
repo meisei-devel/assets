@@ -1396,3 +1396,78 @@ button,input,select,textarea{font:inherit}
     white-space:nowrap !important;
   }
 }
+
+
+/* =========================================================
+   v52: narrow mobile header
+========================================================= */
+
+/*
+ * iPhone SEクラスの狭幅では、ヘッダ内の
+ * 「技術ノート」「会社案内」「不動産情報」等のセクション名を省略する。
+ * ページ直下のタイトルで内容は十分分かるため、MENUを確実に収める。
+ */
+@media(max-width:390px){
+  .technote-brand{
+    display:none !important;
+  }
+}
+
+
+/* =========================================================
+   v55: mobile WebKit/Chrome code-snippet font fix
+========================================================= */
+
+/*
+ * iPhone Chrome/Safariのfont boosting対策。
+ * 100%ではなく none をコード表示部だけに限定して指定する。
+ * 本文全体の文字サイズ調整には影響させない。
+ */
+.code-panel,
+.code-panel pre,
+.code-panel code,
+.code-line-numbers{
+  -webkit-text-size-adjust:none !important;
+  text-size-adjust:none !important;
+}
+
+/*
+ * 長いコード行がGrid自体の最小幅を押し広げないようにする。
+ * 横スクロールは .code-scroll の内部だけで発生させる。
+ */
+.code-scroll{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  overflow-x:auto !important;
+  overflow-y:auto !important;
+}
+
+.code-scroll > pre{
+  min-width:0 !important;
+  width:100% !important;
+  max-width:none !important;
+}
+
+.code-panel pre code,
+.article-body .code-panel pre code,
+.code-panel pre code.hljs,
+.article-body .code-panel pre code.hljs{
+  width:max-content !important;
+  min-width:100% !important;
+  max-width:none !important;
+  font-size:13px !important;
+  line-height:1.62 !important;
+}
+
+/* iPhone SEクラスでは少しだけ小さめに固定 */
+@media(max-width:390px){
+  .code-line-numbers span,
+  .code-panel pre code,
+  .article-body .code-panel pre code,
+  .code-panel pre code.hljs,
+  .article-body .code-panel pre code.hljs{
+    font-size:12px !important;
+    line-height:1.62 !important;
+  }
+}
