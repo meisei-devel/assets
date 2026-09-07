@@ -478,3 +478,21 @@
     width:100% !important;
   }
 }
+
+
+/* =========================================================
+   v56: iPhone form focus / validation consistency
+========================================================= */
+
+/*
+ * iOS Safari/Chrome(WebKit)は、16px未満のフォーム入力欄へ
+ * フォーカスすると自動ズームすることがある。
+ * モバイル時だけ16pxを明示してページ全体の拡大を防ぐ。
+ */
+@media(max-width:760px){
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea{
+    font-size:16px !important;
+  }
+}
