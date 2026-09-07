@@ -292,3 +292,335 @@
     padding:10px 0 28px !important;
   }
 }
+
+
+/* v40: JSで復元する連絡先のフォールバック表示 */
+.contact-obfuscated{
+  color:#7b847d;
+  font-size:.82rem;
+}
+.contact-obfuscated a{
+  font-size:inherit;
+}
+
+
+/* =========================================================
+   v41: 所在地・アクセスの表示を会社概要と同じ密度へ
+========================================================= */
+
+/*
+ * v40までの access-card は左右paddingを持つ独自レイアウトで、
+ * 会社概要の表と比べて文字が小さく・間延びして見えたため、
+ * 会社概要と同じ「ラベル欄 + 内容欄」のカード表現へ統一。
+ */
+.access-card{
+  padding:0 !important;
+  overflow:hidden;
+}
+
+.access-row{
+  display:grid !important;
+  grid-template-columns:108px minmax(0,1fr) !important;
+  gap:0 !important;
+  padding:0 !important;
+  border-bottom:1px solid #e8eee5 !important;
+  align-items:stretch !important;
+}
+
+.access-row:last-child{
+  border-bottom:0 !important;
+}
+
+.access-label{
+  display:flex;
+  align-items:center;
+  padding:12px 14px !important;
+  background:var(--company-pale);
+  color:#586552 !important;
+  font-size:.82rem !important;
+  font-weight:900 !important;
+  line-height:1.5;
+}
+
+.access-row > div{
+  padding:12px 14px !important;
+  color:var(--ink);
+  font-size:.94rem !important;
+  font-weight:600;
+  line-height:1.65;
+  min-width:0;
+}
+
+.access-row > div strong{
+  font-size:1rem;
+}
+
+.access-row a{
+  font-size:.94rem !important;
+}
+
+.contact-obfuscated{
+  font-size:.94rem !important;
+  color:inherit;
+}
+
+.contact-separator{
+  margin:0 .45em;
+}
+
+.map-card{
+  min-height:344px !important;
+}
+
+.map-card iframe{
+  min-height:344px !important;
+}
+
+@media(max-width:760px){
+  .access-row{
+    grid-template-columns:1fr !important;
+  }
+
+  .access-label{
+    padding:8px 12px 4px !important;
+  }
+
+  .access-row > div{
+    padding:5px 12px 10px !important;
+  }
+
+  .map-card,
+  .map-card iframe{
+    min-height:280px !important;
+  }
+}
+
+
+/* =========================================================
+   v43: row fill + vertical centering consistency
+========================================================= */
+
+/* Company profile rows: labels and values vertically centered */
+.profile-list > div{
+  align-items:stretch !important;
+  min-height:50px;
+}
+
+.profile-list dt,
+.profile-list dd{
+  display:flex !important;
+  align-items:center !important;
+}
+
+.profile-list dd.organization-links{
+  justify-content:center;
+  align-items:flex-start !important;
+  flex-direction:column !important;
+}
+
+/* Access card: make every row fill the whole card width/height */
+.access-card{
+  padding:0 !important;
+  overflow:hidden !important;
+  border:1px solid var(--company-line) !important;
+}
+
+.access-row{
+  grid-template-columns:108px minmax(0,1fr) !important;
+  align-items:stretch !important;
+  min-height:50px;
+  margin:0 !important;
+}
+
+.access-label{
+  display:flex !important;
+  align-items:center !important;
+  height:100%;
+  min-height:50px;
+  margin:0 !important;
+  background:var(--company-pale) !important;
+}
+
+/* Value column gets its own centering wrapper */
+.access-value{
+  display:flex !important;
+  align-items:center !important;
+  min-height:50px;
+  padding:12px 14px !important;
+  margin:0 !important;
+  font-size:.94rem !important;
+  line-height:1.65;
+}
+
+.access-value > span{
+  display:block;
+  width:100%;
+}
+
+/* FAX row must reach the rounded bottom border cleanly */
+.access-row:last-child{
+  border-bottom:0 !important;
+}
+
+.access-row:last-child .access-label{
+  border-bottom-left-radius:14px;
+}
+
+.access-row:last-child .access-value{
+  border-bottom-right-radius:14px;
+}
+
+/* Avoid JS-inserted contact values inheriting a smaller size */
+.contact-obfuscated,
+.contact-obfuscated a,
+.access-value a{
+  font-size:.94rem !important;
+  line-height:1.65 !important;
+}
+
+/* Mobile: keep centering stable instead of jumping top/bottom */
+@media(max-width:760px){
+  .profile-list > div{
+    min-height:0;
+  }
+
+  .profile-list dt,
+  .profile-list dd{
+    min-height:42px;
+  }
+
+  .access-row{
+    grid-template-columns:1fr !important;
+    min-height:0;
+  }
+
+  .access-label{
+    min-height:38px;
+    padding:8px 12px !important;
+  }
+
+  .access-value{
+    min-height:44px;
+    padding:8px 12px 10px !important;
+  }
+
+  .access-row:last-child .access-label{
+    border-bottom-left-radius:0;
+  }
+
+  .access-row:last-child .access-value{
+    border-bottom-left-radius:14px;
+    border-bottom-right-radius:14px;
+  }
+}
+
+
+/* =========================================================
+   v44: Access card should not stretch to map height
+========================================================= */
+
+/*
+ * CSS Grid defaults to align-items: stretch.
+ * The map card is taller, so the access-card was stretched to match it,
+ * leaving a white strip below the FAX row.
+ *
+ * Keep both cards at their own intrinsic height instead.
+ */
+.access-grid{
+  align-items:start !important;
+}
+
+.access-card{
+  align-self:start !important;
+  height:auto !important;
+}
+
+/* The map keeps its own height independently. */
+.map-card{
+  align-self:start !important;
+}
+
+
+/* =========================================================
+   v45: section heading vertical alignment
+========================================================= */
+
+.section-title{
+  align-items:center !important;
+}
+
+.section-title .eyebrow{
+  display:flex !important;
+  align-items:center !important;
+  align-self:stretch;
+  margin:0 !important;
+  line-height:1 !important;
+}
+
+.section-title h2{
+  display:flex;
+  align-items:center;
+  margin:0 !important;
+}
+
+
+/* =========================================================
+   v46: compact heading/count pairs never stack
+========================================================= */
+
+/*
+ * "OFFICE 店舗の様子", "PROFILE 会社概要",
+ * "CONTACT FORM お問合せフォーム" などは、
+ * 画面幅が狭くても常に横一列を維持する。
+ */
+.section-title{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:8px !important;
+}
+
+.section-title .eyebrow,
+.section-title h2{
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  margin:0 !important;
+}
+
+/*
+ * "590 ARTICLES" のような件数表示も常に横一列。
+ */
+.article-count,
+.count-label,
+.list-count,
+.article-total{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  white-space:nowrap !important;
+}
+
+.article-count > *,
+.count-label > *,
+.list-count > *,
+.article-total > *{
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+}
+
+/* Mobileでも縦積みに戻さない */
+@media(max-width:760px){
+  .section-title{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+  }
+
+  .section-title .eyebrow,
+  .section-title h2{
+    white-space:nowrap !important;
+  }
+}

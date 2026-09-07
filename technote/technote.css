@@ -1293,3 +1293,106 @@ button,input,select,textarea{font:inherit}
     padding:10px 0 28px !important;
   }
 }
+
+
+/* =========================================================
+   v45: heading/count vertical alignment
+========================================================= */
+
+/* 英字 kicker + 日本語見出し */
+.section-title{
+  align-items:center !important;
+}
+
+.section-title .eyebrow{
+  display:flex !important;
+  align-items:center !important;
+  align-self:stretch;
+  margin:0 !important;
+  line-height:1 !important;
+}
+
+.section-title h2{
+  display:flex;
+  align-items:center;
+  margin:0 !important;
+}
+
+/* "590 ARTICLES" など */
+.article-count,
+.count-label,
+.list-count,
+.article-total{
+  display:flex;
+  align-items:center;
+}
+
+/* 数字と英字ラベルが別要素の場合も中央揃え */
+.article-count > *,
+.count-label > *,
+.list-count > *,
+.article-total > *{
+  align-self:center;
+}
+
+
+/* =========================================================
+   v46: compact heading/count pairs never stack
+========================================================= */
+
+/*
+ * "OFFICE 店舗の様子", "PROFILE 会社概要",
+ * "CONTACT FORM お問合せフォーム" などは、
+ * 画面幅が狭くても常に横一列を維持する。
+ */
+.section-title{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:8px !important;
+}
+
+.section-title .eyebrow,
+.section-title h2{
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  margin:0 !important;
+}
+
+/*
+ * "590 ARTICLES" のような件数表示も常に横一列。
+ */
+.article-count,
+.count-label,
+.list-count,
+.article-total{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  white-space:nowrap !important;
+}
+
+.article-count > *,
+.count-label > *,
+.list-count > *,
+.article-total > *{
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+}
+
+/* Mobileでも縦積みに戻さない */
+@media(max-width:760px){
+  .section-title{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+  }
+
+  .section-title .eyebrow,
+  .section-title h2{
+    white-space:nowrap !important;
+  }
+}
