@@ -1523,3 +1523,15 @@ button,input,select,textarea{font:inherit}
     margin-top:5px !important;
   }
 }
+
+
+/* =========================================================
+   v74: whole article card is clickable via technote.js
+========================================================= */
+.article-card{
+  cursor:pointer;
+}
+.article-card:focus-visible{
+  outline:3px solid rgba(38,110,190,.35);
+  outline-offset:2px;
+}

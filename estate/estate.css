@@ -378,3 +378,15 @@
 
 /* v68: pagination follows Technote shared UI */
 .estate-pagination{margin-top:14px}
+
+
+/* =========================================================
+   v74: whole estate card is clickable via technote.js
+========================================================= */
+.estate-card{
+  cursor:pointer;
+}
+.estate-card:focus-visible{
+  outline:3px solid rgba(168,111,38,.30);
+  outline-offset:2px;
+}
