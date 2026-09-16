@@ -1,0 +1,376 @@
+:root{
+  --estate:#9a6a32;
+  --estate-dark:#745026;
+  --estate-soft:#f5eee4;
+  --estate-pale:#fbf8f3;
+  --estate-line:#e6ddd2;
+}
+
+/* 共通ヘッダー・フッターは technote.css を使用 */
+.estate-page{background:#fff;color:var(--ink)}
+.estate-shell{width:min(var(--shell),calc(100% - 40px));margin:auto}
+
+/* Technote / Company と同じ「淡色→白」のタイトル帯 */
+.estate-hero{
+  padding:18px 0 10px;
+  background:linear-gradient(180deg,#f5eee4 0,#fbf8f3 78%,#fff 100%);
+}
+.estate-kicker{margin:0 0 4px;color:var(--estate)}
+.estate-title-row{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:12px;
+}
+.estate-title-row h1{
+  margin:0;
+  font-size:clamp(2.2rem,3.8vw,3.5rem);
+  line-height:1.2;
+  letter-spacing:.01em;
+}
+.estate-title-row p{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  font-weight:700;
+  line-height:1.55;
+}
+
+/* Technote の search-box と同寸法 */
+.estate-search{
+  max-width:720px;
+  display:flex;
+  gap:8px;
+  margin:0;
+  padding:4px;
+  background:#fff;
+  border:1px solid #d7e3ef;
+  border-radius:11px;
+  box-shadow:var(--shadow);
+}
+.estate-search input[type=search]{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:0;
+  padding:6px 10px;
+  color:var(--ink);
+  background:transparent;
+  font-size:.88rem;
+}
+.estate-search button{
+  border:0;
+  border-radius:8px;
+  padding:6px 16px;
+  background:var(--estate);
+  color:#fff;
+  font-size:.80rem;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* Technote の category-chips に近いテキストリンク */
+.estate-filter-lines{margin-top:8px;color:#607289}
+.estate-filter-line{display:flex;align-items:flex-start;gap:10px;line-height:1.65}
+.estate-filter-label{
+  flex:0 0 auto;
+  padding-top:0;
+  color:#6b5e50;
+  font-size:.72rem;
+  font-weight:900;
+}
+.estate-filter-links{display:flex;flex-wrap:wrap;gap:0}
+.estate-filter-links a{
+  padding:0;
+  border:0;
+  background:none;
+  color:#766553;
+  font-size:.73rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.estate-filter-links a:not(:last-child)::after{
+  content:" / ";
+  margin:0 .42em;
+  color:#b8aa99;
+  font-weight:400;
+}
+.estate-filter-links a:hover,.estate-filter-links a.current{color:var(--estate-dark);font-weight:900}
+
+.estate-main{padding:14px 0 36px}
+.estate-result-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}
+.estate-result-head h2{display:flex;align-items:baseline;gap:8px;margin:0}
+.estate-result-head h2 strong{font-size:1.35rem}
+.estate-result-head h2 span{color:#8490a1;font-size:.64rem;font-weight:900;letter-spacing:.14em}
+.estate-count{margin:0;color:#8a96a4;font-size:.72rem;font-weight:800}
+
+/* Technote article-card を基準にした一覧カード */
+.estate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.estate-card{
+  display:flex;
+  flex-direction:column;
+  min-height:235px;
+  padding:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 7px 20px rgba(50,78,112,.06);
+  transition:transform .2s,box-shadow .2s;
+}
+.estate-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.estate-card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.estate-type-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#f4eadf;
+  color:var(--estate-dark);
+  font-size:.67rem;
+  font-weight:900;
+}
+.estate-city-label{color:#8490a1;font-size:.69rem;font-weight:700}
+.estate-card-body{position:relative;flex:1;min-width:0}
+.estate-card.has-thumb .estate-card-body{padding-right:112px}
+.estate-card-thumb{
+  position:absolute;
+  right:0;
+  top:0;
+  width:96px;
+  height:72px;
+  overflow:hidden;
+  border:1px solid #e0e6ec;
+  border-radius:9px;
+  background:#f6f8fa;
+}
+.estate-card-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.estate-card-topline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.estate-price{color:#a45d1b;font-size:1.02rem;line-height:1.2}
+.estate-layout{padding:2px 7px;border-radius:999px;background:#f7f0e7;color:#705237;font-size:.68rem;font-weight:900}
+.estate-card h3{margin:0 0 7px;font-size:1.06rem;line-height:1.5}
+.estate-card h3 a{color:var(--ink);text-decoration:none}.estate-card h3 a:hover{color:var(--estate-dark)}
+.estate-address,.estate-traffic{margin:0;color:var(--muted);font-size:.83rem;line-height:1.55}
+.estate-traffic{margin-top:3px}
+.estate-mini-spec{display:flex;flex-wrap:wrap;gap:8px 14px;margin:12px 0 0;padding-top:11px;border-top:1px solid #edf1f5}
+.estate-mini-spec div{display:flex;gap:5px;font-size:.71rem}.estate-mini-spec dt{color:#909baa}.estate-mini-spec dd{margin:0;color:#586779;font-weight:700}
+.estate-card-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;padding-top:13px;border-top:1px solid #edf1f5;color:#8895a4;font-size:.67rem}
+.estate-card-footer a{color:var(--estate-dark);font-weight:900;text-decoration:none}.estate-card-footer a:hover{text-decoration:underline}
+
+.estate-empty,.estate-notice{padding:34px 20px;border:1px solid var(--line);border-radius:15px;background:#fff;text-align:center;color:var(--muted)}
+.estate-notice strong,.estate-notice span{display:block}.estate-notice span{margin-top:6px;font-size:.8rem}
+.estate-notice-error{border-color:#e4cbb0;background:#fffaf5}
+
+/* detail page */
+.estate-detail{padding-top:4px}
+.estate-detail-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:20px 22px;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 7px 20px rgba(50,78,112,.04)}
+.estate-detail-head h2{margin:8px 0 4px;font-size:1.45rem}.estate-detail-head p{margin:0;color:var(--muted);font-size:.84rem}
+.estate-type-inline{position:static}.estate-detail-price{color:#a45d1b;font-size:1.45rem;white-space:nowrap}
+.estate-gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin-top:14px}.estate-gallery figure{margin:0;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#eef1f4}.estate-gallery figure.main{grid-row:span 2;aspect-ratio:auto}.estate-gallery img{display:block;width:100%;height:100%;object-fit:cover}
+.estate-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.estate-detail-card{padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:15px}.estate-detail-card h3{margin:0 0 10px;font-size:1rem;color:var(--estate-dark)}
+.estate-detail-list{margin:0}.estate-detail-list div{display:grid;grid-template-columns:105px 1fr;gap:12px;padding:8px 0;border-top:1px solid #edf1f5;font-size:.78rem}.estate-detail-list div:first-child{border-top:0}.estate-detail-list dt{color:#8995a4;font-weight:800}.estate-detail-list dd{margin:0;color:#4d5a68}
+.estate-remarks{margin-top:14px}.estate-remarks p{margin:0;color:#5f6b78;font-size:.82rem;line-height:1.8}
+.estate-inquiry{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:16px;padding:16px 18px;border-radius:14px;background:#745026;color:#fff}.estate-inquiry strong,.estate-inquiry span{display:block}.estate-inquiry span{margin-top:3px;font-size:.74rem;color:#efe3d5}.estate-inquiry a{padding:8px 14px;border-radius:8px;background:#fff;color:#704a1b;font-size:.8rem;font-weight:900;text-decoration:none;white-space:nowrap}
+
+@media(max-width:980px){
+  .estate-grid{grid-template-columns:repeat(2,1fr)}
+  .estate-gallery{grid-template-columns:1fr 1fr}.estate-gallery figure.main{grid-column:1/-1;grid-row:auto;aspect-ratio:16/9}
+}
+@media(max-width:760px){
+  .estate-shell{width:calc(100% - 24px)}
+  .estate-hero{padding:14px 0 8px}
+  .estate-title-row{display:block;margin-bottom:10px}
+  .estate-title-row h1{font-size:clamp(2rem,10vw,2.8rem)}
+  .estate-title-row p{margin-top:3px;font-size:.87rem}
+  .estate-search button{padding:6px 14px}
+  .estate-filter-line{display:block}
+  .estate-filter-label{display:block;margin-bottom:1px}
+  .estate-city-links{max-height:104px;overflow:auto}
+  .estate-main{padding:10px 0 28px}
+  .estate-grid{grid-template-columns:1fr}
+  .estate-card{min-height:0}
+  .estate-card.has-thumb .estate-card-body{padding-right:104px}
+  .estate-card-thumb{width:88px;height:66px}
+  .estate-detail-head{display:block}.estate-detail-price{display:block;margin-top:10px}
+  .estate-detail-grid{grid-template-columns:1fr}.estate-gallery{grid-template-columns:1fr 1fr}
+  .estate-inquiry{display:block}.estate-inquiry a{display:block;margin-top:12px;text-align:center}
+  .estate-detail-list div{grid-template-columns:92px 1fr}
+}
+@media(max-width:420px){
+  .estate-card.has-thumb .estate-card-body{padding-right:0}
+  .estate-card-thumb{position:static;width:92px;height:69px;margin:0 0 8px auto}
+}
+
+/* =========================================================
+   v62: shared top-title rhythm
+   Company / Contact と英字kicker～大見出しまで完全に同寸法へ
+========================================================= */
+.estate-hero{
+  padding:24px 0 14px !important;
+}
+.estate-kicker{
+  margin:0 0 4px !important;
+  font-size:.73rem !important;
+  line-height:normal;
+}
+.estate-title-row{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:0 !important;
+}
+.estate-title-row h1{
+  margin:0;
+  font-size:clamp(2.2rem,3.8vw,3.5rem) !important;
+  line-height:1.2;
+  letter-spacing:.01em;
+}
+.estate-title-row p{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  font-weight:700;
+  line-height:1.55;
+}
+.estate-search{
+  margin-top:12px !important;
+}
+@media(max-width:760px){
+  .estate-hero{
+    padding:18px 0 10px !important;
+  }
+  .estate-title-row{
+    display:block;
+    margin-bottom:0 !important;
+  }
+  .estate-title-row h1{
+    font-size:clamp(2rem,10vw,2.8rem) !important;
+  }
+  .estate-title-row p{
+    margin-top:5px !important;
+  }
+}
+
+
+/* =========================================================
+   v63: Technote-like result header + compact thumbnail layout
+========================================================= */
+.estate-result-head .estate-show-all{
+  color:var(--blue);
+  font-size:.76rem;
+  font-weight:900;
+  text-decoration:none;
+}
+.estate-result-head .estate-show-all:hover{
+  text-decoration:underline;
+}
+
+.estate-card-meta{
+  justify-content:flex-start;
+}
+.estate-type-pill{
+  gap:0;
+}
+.estate-type-city{
+  color:#9a8061;
+  font-weight:800;
+}
+
+.estate-card.has-thumb .estate-card-body{
+  padding-right:0;
+}
+.estate-card-upper{
+  min-width:0;
+}
+.estate-card-upper.has-thumb{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 96px;
+  gap:12px;
+  align-items:start;
+}
+.estate-card-upper-text{
+  min-width:0;
+}
+.estate-card-thumb{
+  position:static;
+  width:96px;
+  height:72px;
+  align-self:start;
+}
+.estate-traffic{
+  margin-top:8px;
+}
+.estate-mini-spec{
+  width:100%;
+}
+
+@media(max-width:760px){
+  .estate-card.has-thumb .estate-card-body{
+    padding-right:0;
+  }
+  .estate-card-upper.has-thumb{
+    grid-template-columns:minmax(0,1fr) 88px;
+    gap:10px;
+  }
+  .estate-card-thumb{
+    width:88px;
+    height:66px;
+  }
+}
+@media(max-width:420px){
+  .estate-card-upper.has-thumb{
+    grid-template-columns:minmax(0,1fr) 82px;
+    gap:9px;
+  }
+  .estate-card-thumb{
+    position:static;
+    width:82px;
+    height:62px;
+    margin:0;
+  }
+}
+
+
+/* =========================================================
+   v64: full-width card header / compact public address
+========================================================= */
+.estate-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-bottom:11px}
+.estate-card-head-main{display:flex;align-items:center;gap:7px;flex-wrap:wrap;min-width:0}
+.estate-card-head .estate-price{margin-right:1px;font-size:1.03rem}
+.estate-card-head .estate-type-pill,.estate-card-head .estate-layout{white-space:nowrap}
+.estate-card-head .estate-city-label{margin-left:auto;flex:0 0 auto;color:#8490a1;font-size:.69rem;font-weight:700}
+.estate-card.has-thumb .estate-card-body{padding-right:0}
+.estate-card-upper.has-thumb{grid-template-columns:minmax(0,1fr) 96px;gap:12px;align-items:start}
+.estate-card-upper-text h3{margin-top:0}
+.estate-address{margin-top:4px}
+.estate-traffic{display:block;width:100%;margin-top:10px}
+.estate-mini-spec{display:flex;width:100%}
+@media(max-width:760px){.estate-card-head{align-items:flex-start}.estate-card-head-main{gap:6px}.estate-card-upper.has-thumb{grid-template-columns:minmax(0,1fr) 88px}}
+@media(max-width:420px){.estate-card-head{flex-wrap:wrap}.estate-card-head .estate-city-label{margin-left:0;width:100%}}
+
+
+/* =========================================================
+   v65: unified type/layout pills
+========================================================= */
+.estate-card-head .estate-type-pill,
+.estate-card-head .estate-layout{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:24px;
+  padding:3px 8px;
+  border-radius:999px;
+  font-size:.68rem;
+  line-height:1;
+  font-weight:900;
+  box-sizing:border-box;
+}
+.estate-card-head .estate-type-pill{
+  background:#f5e8d8;
+  color:#8a5d24;
+}
+.estate-card-head .estate-layout{
+  background:#eef3f8;
+  color:#5b6878;
+}

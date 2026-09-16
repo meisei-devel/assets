@@ -1471,3 +1471,55 @@ button,input,select,textarea{font:inherit}
     line-height:1.62 !important;
   }
 }
+
+/* =========================================================
+   v62: shared top-title rhythm
+   Company / Contact を基準に Technote のタイトル上部を統一
+========================================================= */
+.note-hero{
+  padding:24px 0 14px !important;
+}
+.note-hero .kicker{
+  margin:0 0 4px !important;
+  font-size:.73rem !important;
+  line-height:normal;
+}
+.note-hero-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start !important;
+  flex-wrap:wrap;
+  gap:14px !important;
+  margin-bottom:0 !important;
+}
+.note-hero-title-row.is-default-title h1{
+  margin:0 !important;
+  font-size:clamp(2.2rem,3.8vw,3.5rem) !important;
+  line-height:1.2 !important;
+  letter-spacing:.01em;
+}
+.note-hero-title-row .note-hero-sub{
+  margin:0 !important;
+  color:var(--muted);
+  font-size:.95rem !important;
+  font-weight:700;
+  line-height:1.55 !important;
+}
+.note-hero .search-box{
+  margin-top:12px !important;
+}
+@media(max-width:760px){
+  .note-hero{
+    padding:18px 0 10px !important;
+  }
+  .note-hero-title-row{
+    display:block;
+    margin-bottom:0 !important;
+  }
+  .note-hero-title-row.is-default-title h1{
+    font-size:clamp(2rem,10vw,2.8rem) !important;
+  }
+  .note-hero-title-row .note-hero-sub{
+    margin-top:5px !important;
+  }
+}
