@@ -374,3 +374,7 @@
   background:#eef3f8;
   color:#5b6878;
 }
+
+
+/* v68: pagination follows Technote shared UI */
+.estate-pagination{margin-top:14px}
