@@ -1848,3 +1848,17 @@
 .estate-either-required{
   display:none !important;
 }
+
+
+/* =========================================================
+   v102: filtered Estate titles exactly match Technote sizing
+========================================================= */
+.estate-title-row h1.estate-filtered-title{
+  font-size:clamp(1.5rem, 2.1vw, 2rem) !important;
+  line-height:1.3 !important;
+}
+@media(max-width:760px){
+  .estate-title-row h1.estate-filtered-title{
+    font-size:clamp(1.5rem, 7vw, 2rem) !important;
+  }
+}
