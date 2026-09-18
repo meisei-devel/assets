@@ -1405,3 +1405,446 @@
     min-height:280px;
   }
 }
+
+
+/* =========================================================
+   v87: property inquiry form
+========================================================= */
+.estate-inquiry-card{
+  overflow:hidden;
+  border:1px solid #e3dfee;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 7px 20px rgba(82,68,120,.06);
+}
+.estate-inquiry-head{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 18px;
+  border-bottom:1px solid #ece9f2;
+  background:#faf9fc;
+}
+.estate-inquiry-head p{
+  margin:0;
+  color:#625d6d;
+  font-size:.82rem;
+  line-height:1.65;
+}
+.estate-inquiry-form{
+  padding:7px 20px 20px;
+}
+.estate-form-row{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:16px;
+  align-items:start;
+  padding:13px 0;
+  border-bottom:1px solid #ece9f2;
+}
+.estate-form-row>label{
+  padding-top:8px;
+  color:var(--ink);
+  font-size:.84rem;
+  font-weight:900;
+}
+.estate-form-row input,
+.estate-form-row textarea,
+.estate-viewing-date-grid input{
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+  border:1px solid #cbc5d9;
+  border-radius:9px;
+  background:#fff;
+  color:var(--ink);
+  font:inherit;
+  font-size:.93rem;
+  padding:9px 11px;
+  outline:none;
+}
+.estate-form-row textarea{
+  resize:vertical;
+  line-height:1.7;
+}
+.estate-form-row input:focus,
+.estate-form-row textarea:focus,
+.estate-viewing-date-grid input:focus{
+  border-color:#8876b4;
+  box-shadow:0 0 0 3px rgba(116,100,154,.12);
+}
+.estate-required,
+.estate-optional{
+  display:inline-block;
+  margin-left:5px;
+  padding:1px 5px;
+  border-radius:5px;
+  font-size:.62rem;
+  line-height:1.5;
+  vertical-align:middle;
+}
+.estate-required{
+  color:#9b2f47;
+  background:#f9e8ed;
+}
+.estate-optional{
+  color:#6e6877;
+  background:#efedf2;
+}
+.estate-viewing-box{
+  margin:17px 0 0;
+  padding:15px 16px;
+  border:1px solid #ddd7e8;
+  border-radius:12px;
+  background:#faf9fc;
+}
+.estate-check-row,
+.estate-consent-row{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  color:#4c4654;
+  font-size:.86rem;
+  font-weight:900;
+  line-height:1.6;
+  cursor:pointer;
+}
+.estate-check-row input,
+.estate-consent-row input{
+  flex:0 0 auto;
+  width:17px;
+  height:17px;
+  margin-top:3px;
+  accent-color:#74649a;
+}
+.estate-viewing-dates{
+  display:none;
+  margin-top:13px;
+  padding-top:13px;
+  border-top:1px solid #e4dfea;
+}
+.estate-viewing-dates.is-active{
+  display:block;
+}
+.estate-viewing-dates>p{
+  margin:0 0 10px;
+  color:#71697a;
+  font-size:.79rem;
+  line-height:1.65;
+}
+.estate-viewing-date-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.estate-viewing-date-grid label>span{
+  display:block;
+  margin-bottom:5px;
+  color:#554f5d;
+  font-size:.76rem;
+  font-weight:900;
+}
+.estate-viewing-date-grid em{
+  margin-left:4px;
+  color:#9b2f47;
+  font-size:.68rem;
+  font-style:normal;
+}
+.estate-inquiry-notice{
+  margin:17px 0 11px;
+  padding:12px 14px;
+  border-radius:10px;
+  background:#f7f5fa;
+  color:#706979;
+  font-size:.76rem;
+  line-height:1.75;
+}
+.estate-inquiry-notice p{
+  margin:0;
+}
+.estate-inquiry-notice p+p{
+  margin-top:6px;
+}
+.estate-consent-row{
+  font-size:.82rem;
+}
+.estate-inquiry-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:16px;
+}
+.estate-inquiry-submit{
+  min-height:44px;
+  padding:10px 24px;
+  border:1px solid #5d4e83;
+  border-radius:10px;
+  background:#5d4e83;
+  color:#fff;
+  font:inherit;
+  font-size:.88rem;
+  font-weight:900;
+  cursor:pointer;
+}
+.estate-inquiry-submit:hover{
+  filter:brightness(.95);
+}
+.estate-inquiry-errors,
+.estate-inquiry-success{
+  margin:16px 20px 0;
+  padding:10px 13px;
+  border-radius:10px;
+  font-size:.84rem;
+  line-height:1.6;
+}
+.estate-inquiry-errors{
+  border:1px solid #e9b9c5;
+  background:#fff5f7;
+  color:#8b2940;
+}
+.estate-inquiry-errors ul{
+  margin:5px 0 0;
+  padding-left:1.4em;
+}
+.estate-inquiry-success{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px 9px;
+  border:1px solid #b9d9c0;
+  background:#f1faf3;
+  color:#356543;
+}
+.estate-hp-field{
+  position:absolute !important;
+  left:-10000px !important;
+  width:1px !important;
+  height:1px !important;
+  overflow:hidden !important;
+}
+
+@media(max-width:760px){
+  .estate-inquiry-head{
+    display:block;
+  }
+  .estate-inquiry-head p+p{
+    margin-top:3px;
+  }
+  .estate-inquiry-form{
+    padding:5px 14px 16px;
+  }
+  .estate-form-row{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+  .estate-form-row>label{
+    padding-top:0;
+  }
+  .estate-viewing-date-grid{
+    grid-template-columns:1fr;
+  }
+  .estate-inquiry-actions{
+    justify-content:stretch;
+  }
+  .estate-inquiry-submit{
+    width:100%;
+  }
+}
+
+
+/* =========================================================
+   v88: inquiry form refinements
+========================================================= */
+.estate-inquiry-card{
+  padding-top:0;
+}
+.estate-inquiry-form{
+  padding-top:14px;
+}
+.estate-form-row-message textarea{
+  min-height:92px;
+  max-height:220px;
+}
+
+/* Important notice: make it unmistakable without becoming alarming. */
+.estate-inquiry-notice{
+  margin:20px 0 15px;
+  padding:16px 18px;
+  border:2px solid #c9bddc;
+  border-radius:12px;
+  background:#f5f1fa;
+  color:#51485f;
+  font-size:.83rem;
+  font-weight:700;
+  line-height:1.8;
+  box-shadow:0 4px 14px rgba(93,78,131,.07);
+}
+.estate-inquiry-notice p{
+  margin:0;
+}
+.estate-inquiry-notice p+p{
+  margin-top:8px;
+}
+
+/* Center the consent exactly like the contact confirmation flow. */
+.estate-consent-row{
+  justify-content:center;
+  width:100%;
+  margin:16px auto 0;
+  text-align:center;
+}
+.estate-inquiry-actions{
+  display:flex;
+  justify-content:center;
+  margin-top:14px;
+}
+
+/* Larger/wider primary action, matching the contact confirmation CTA feel. */
+.estate-inquiry-submit{
+  width:min(100%, 420px);
+  min-height:54px;
+  padding:13px 28px;
+  border-radius:10px;
+  font-size:.96rem;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+
+@media(max-width:760px){
+  .estate-inquiry-form{
+    padding-top:10px;
+  }
+  .estate-form-row-message textarea{
+    min-height:84px;
+  }
+  .estate-inquiry-notice{
+    padding:14px 15px;
+    font-size:.8rem;
+  }
+  .estate-consent-row{
+    justify-content:center;
+    text-align:left;
+  }
+  .estate-inquiry-actions{
+    justify-content:center;
+  }
+  .estate-inquiry-submit{
+    width:100%;
+    min-height:52px;
+  }
+}
+
+
+/* =========================================================
+   v89: inquiry CTA exactly matches Contact, simplify notices
+========================================================= */
+.estate-inquiry-notice{
+  margin:16px 0 10px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:#665f70;
+  font-size:.78rem;
+  font-weight:600;
+  line-height:1.55;
+}
+.estate-inquiry-notice p{
+  position:relative;
+  margin:0;
+  padding-left:1.2em;
+}
+.estate-inquiry-notice p::before{
+  content:"※";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#7a6f86;
+  font-weight:900;
+}
+.estate-inquiry-notice p+p{
+  margin-top:3px;
+}
+
+.estate-inquiry-submit{
+  width:260px !important;
+  min-width:260px !important;
+  min-height:44px !important;
+  padding:10px 24px !important;
+  border-radius:10px !important;
+  font-size:.88rem !important;
+  font-weight:900 !important;
+  letter-spacing:normal !important;
+}
+.estate-inquiry-actions{
+  justify-content:center !important;
+}
+.estate-consent-row{
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+@media(max-width:760px){
+  .estate-inquiry-submit{
+    width:min(100%,320px) !important;
+    min-width:0 !important;
+  }
+  .estate-inquiry-notice{
+    font-size:.76rem;
+    line-height:1.5;
+  }
+}
+
+
+/* =========================================================
+   v91: slightly wider inquiry submit button
+========================================================= */
+.estate-inquiry-submit{
+  width:300px !important;
+  min-width:300px !important;
+}
+@media(max-width:760px){
+  .estate-inquiry-submit{
+    width:min(100%,340px) !important;
+    min-width:0 !important;
+  }
+}
+
+
+/* =========================================================
+   v93: viewing guidance text uses normal body contrast
+========================================================= */
+.estate-viewing-dates>p{
+  color:#51485f !important;
+  font-size:.78rem !important;
+  font-weight:600 !important;
+  line-height:1.55 !important;
+}
+
+
+/* =========================================================
+   v96: either inquiry message or viewing request is required
+========================================================= */
+.estate-either-required{
+  display:inline-block;
+  margin-left:5px;
+  padding:1px 5px;
+  border-radius:5px;
+  background:#f0edf5;
+  color:#6b6077;
+  font-size:.62rem;
+  font-style:normal;
+  font-weight:900;
+  line-height:1.5;
+  vertical-align:middle;
+}
+.estate-check-row .estate-either-required{
+  margin-left:4px;
+}
+
+
+/* =========================================================
+   v98: inquiry message required again; remove either/or badge
+========================================================= */
+.estate-either-required{
+  display:none !important;
+}

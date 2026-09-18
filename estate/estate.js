@@ -50,3 +50,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'ArrowRight') showPhoto(current + 1);
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.querySelector('#estate-viewing-check');
+  const dates = document.querySelector('#estate-viewing-dates');
+  const first = document.querySelector('#estate-preferred-1');
+  const second = document.querySelector('#estate-preferred-2');
+  const message = document.querySelector('#estate-inquiry-message');
+
+  if (!checkbox) {
+    if (message) message.required = true;
+    return;
+  }
+
+  if (!dates || !first || !second) return;
+
+  const updateViewingState = () => {
+    const active = checkbox.checked;
+    dates.classList.toggle('is-active', active);
+    first.required = active;
+    second.required = active;
+    first.disabled = !active;
+    second.disabled = !active;
+
+    if (message) {
+      message.required = true;
+      if (active && message.value.trim() === '') {
+        message.value = '内覧希望';
+      }
+    }
+  };
+
+  checkbox.addEventListener('change', updateViewingState);
+  updateViewingState();
+});
