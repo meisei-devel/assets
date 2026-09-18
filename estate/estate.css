@@ -390,3 +390,1018 @@
   outline:3px solid rgba(168,111,38,.30);
   outline-offset:2px;
 }
+
+
+/* =========================================================
+   v75: estate detail = Technote + Company + Contact
+========================================================= */
+.estate-detail-page{
+  background:#f8fafc;
+}
+.estate-detail-page .estate-hero{
+  background:linear-gradient(180deg,#f2dfc5 0,#f8eee0 44%,#f8fafc 100%);
+  border-bottom:0;
+}
+.estate-detail-shell{
+  width:min(1180px,calc(100% - 36px));
+  margin:0 auto;
+  padding:24px 0 48px;
+}
+.estate-breadcrumb{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+  color:#8190a3;
+  font-size:.72rem;
+}
+.estate-breadcrumb a{
+  color:#8c5c22;
+  text-decoration:none;
+}
+.estate-breadcrumb a:hover{text-decoration:underline}
+
+.estate-detail-article{
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #e1e8f0;
+  border-radius:20px;
+  box-shadow:0 12px 34px rgba(46,73,104,.08);
+}
+.estate-property-header{
+  padding:28px 38px 24px;
+  border-bottom:1px solid #edf1f5;
+}
+.estate-property-tags{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:12px;
+}
+.estate-property-tags .estate-type-pill,
+.estate-property-tags .estate-layout{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:24px;
+  padding:3px 8px;
+  border-radius:999px;
+  font-size:.68rem;
+  line-height:1;
+  font-weight:900;
+}
+.estate-property-city{
+  color:#8793a3;
+  font-size:.72rem;
+  font-weight:800;
+}
+.estate-property-titleline{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+}
+.estate-property-titleline>div{min-width:0}
+.estate-property-header h1{
+  margin:0 0 8px;
+  color:#35281a;
+  font-size:clamp(1.65rem,3.5vw,2.55rem);
+  line-height:1.38;
+}
+.estate-property-address,
+.estate-property-traffic{
+  margin:3px 0;
+  color:#667487;
+  font-size:.82rem;
+  line-height:1.6;
+}
+.estate-property-price{
+  flex:0 0 auto;
+  color:#a85f18;
+  font-size:clamp(1.35rem,2.8vw,1.9rem);
+  white-space:nowrap;
+}
+
+.estate-detail-section{
+  padding:28px 38px 0;
+}
+.estate-detail-section:last-of-type{
+  padding-bottom:30px;
+}
+.estate-section-title{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin:0 0 12px;
+  white-space:nowrap;
+}
+.estate-eyebrow{
+  margin:0;
+  color:#aa732f;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.estate-section-title h2{
+  margin:0;
+  color:#3f3428;
+  font-size:1.12rem;
+  line-height:1.2;
+}
+
+.estate-gallery-section{padding-top:20px}
+.estate-gallery-full{
+  grid-template-columns:2fr 1fr 1fr;
+  margin-top:0;
+}
+
+.estate-summary-card,
+.estate-all-fields-card,
+.estate-notes-card{
+  overflow:hidden;
+  border:1px solid #e0e6ec;
+  border-radius:14px;
+  background:#fff;
+}
+.estate-summary-list,
+.estate-all-fields-list{margin:0}
+.estate-summary-list>div,
+.estate-all-fields-list>div{
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  border-top:1px solid #edf1f5;
+}
+.estate-summary-list>div:first-child,
+.estate-all-fields-list>div:first-child{border-top:0}
+.estate-summary-list dt,
+.estate-all-fields-list dt{
+  padding:10px 14px;
+  background:#fbf8f3;
+  color:#7c6b57;
+  font-size:.76rem;
+  font-weight:900;
+}
+.estate-summary-list dd,
+.estate-all-fields-list dd{
+  margin:0;
+  padding:10px 14px;
+  color:#4e5966;
+  font-size:.82rem;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+.estate-summary-list dd strong{
+  color:#a85f18;
+  font-size:1rem;
+}
+.estate-notes-card{
+  padding:16px 18px;
+}
+.estate-notes-card p{
+  margin:0;
+  color:#596675;
+  font-size:.84rem;
+  line-height:1.8;
+}
+
+.estate-contact-section{
+  padding-bottom:30px;
+}
+.estate-contact-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:18px 20px;
+  border:1px solid #e5dded;
+  border-radius:14px;
+  background:#faf9fc;
+}
+.estate-contact-card p{
+  margin:0;
+  color:#665d72;
+  font-size:.82rem;
+  line-height:1.6;
+}
+.estate-contact-card .estate-contact-no{
+  margin-top:4px;
+  color:#8b8196;
+  font-size:.72rem;
+}
+.estate-contact-button{
+  flex:0 0 auto;
+  padding:10px 16px;
+  border-radius:9px;
+  background:#74649a;
+  color:#fff !important;
+  font-size:.8rem;
+  font-weight:900;
+  text-decoration:none !important;
+}
+.estate-contact-button:hover{background:#5d4e83}
+
+.estate-detail-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 38px;
+  border-top:1px solid #edf1f5;
+  color:#8a97a8;
+  font-size:.72rem;
+}
+.estate-detail-footer a{
+  color:#8c5c22;
+  font-weight:800;
+  text-decoration:none;
+}
+.estate-detail-footer a:hover{text-decoration:underline}
+
+@media(max-width:760px){
+  .estate-detail-shell{width:calc(100% - 20px);padding:10px 0 28px}
+  .estate-property-header{padding:22px 20px 18px}
+  .estate-property-titleline{display:block}
+  .estate-property-price{display:block;margin-top:12px}
+  .estate-detail-section{padding:22px 20px 0}
+  .estate-gallery-full{grid-template-columns:1fr 1fr}
+  .estate-gallery-full figure.main{grid-column:1/-1;grid-row:auto;aspect-ratio:16/9}
+  .estate-summary-list>div,
+  .estate-all-fields-list>div{grid-template-columns:110px minmax(0,1fr)}
+  .estate-summary-list dt,
+  .estate-all-fields-list dt,
+  .estate-summary-list dd,
+  .estate-all-fields-list dd{padding:9px 10px}
+  .estate-contact-card{display:block}
+  .estate-contact-button{display:block;margin-top:12px;text-align:center}
+  .estate-detail-footer{padding:16px 20px;align-items:flex-start;flex-direction:column}
+}
+@media(max-width:420px){
+  .estate-section-title{gap:7px}
+  .estate-summary-list>div,
+  .estate-all-fields-list>div{grid-template-columns:92px minmax(0,1fr)}
+  .estate-summary-list dt,
+  .estate-all-fields-list dt{font-size:.7rem}
+}
+
+
+/* =========================================================
+   v76: detail header follows Technote article detail
+========================================================= */
+.estate-detail-page{
+  padding-top:0;
+  background:#f5f8fb;
+}
+.estate-detail-shell{
+  width:min(1280px,calc(100% - 40px));
+  margin:0 auto;
+  padding:18px 0 44px;
+}
+.estate-breadcrumb{
+  margin:0 0 18px;
+  padding:0;
+  color:#71839a;
+  font-size:.72rem;
+}
+.estate-breadcrumb a{
+  color:#71839a;
+  text-decoration:none;
+}
+.estate-breadcrumb a:hover{
+  color:#246fbd;
+  text-decoration:underline;
+}
+.estate-detail-article{
+  border-color:#dbe4ee;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:none;
+}
+.estate-property-header{
+  padding:28px 32px 24px;
+}
+.estate-property-tags a{
+  text-decoration:none;
+}
+.estate-property-tags .estate-type-pill{
+  background:#f7ead9;
+  color:#9a6221;
+}
+.estate-property-tags .estate-property-city{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  padding:3px 8px;
+  border-radius:999px;
+  background:#eef3f8;
+  color:#647487;
+  font-size:.68rem;
+  line-height:1;
+  font-weight:900;
+}
+.estate-property-tags .estate-property-city:hover{
+  background:#e4edf6;
+  color:#246fbd;
+}
+.estate-property-header h1{
+  margin:0 0 10px;
+  color:#223653;
+  font-size:clamp(1.7rem,3.25vw,2.5rem);
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+.estate-property-titleline{
+  align-items:flex-end;
+}
+.estate-property-price{
+  padding-bottom:2px;
+}
+@media(max-width:760px){
+  .estate-detail-shell{width:calc(100% - 20px);padding-top:12px}
+  .estate-property-header{padding:22px 20px 18px}
+}
+
+
+/* =========================================================
+   v77: livelier detail sections, exact map, photo rail
+========================================================= */
+.estate-detail-article{
+  box-shadow:0 8px 28px rgba(50,73,104,.07);
+}
+.estate-detail-section{
+  padding-top:30px;
+}
+.estate-section-title{
+  gap:8px;
+  margin-bottom:11px;
+}
+.estate-section-title > div{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+.estate-section-title h2{
+  color:#273a54;
+  font-size:clamp(1.15rem,2vw,1.42rem);
+  font-weight:900;
+}
+.estate-eyebrow{
+  color:#a86b24;
+  font-size:.69rem;
+  letter-spacing:.16em;
+}
+.estate-section-title-split{
+  justify-content:space-between;
+  align-items:flex-end;
+  white-space:normal;
+}
+.estate-section-note{
+  margin:0;
+  color:#8795a7;
+  font-size:.70rem;
+  font-weight:700;
+}
+
+/* Company PROFILE style: stronger, more generous rows */
+.estate-summary-card,
+.estate-all-fields-card,
+.estate-location-card,
+.estate-map-card{
+  border-color:#dfE6ec;
+  box-shadow:0 6px 18px rgba(67,85,108,.045);
+}
+.estate-summary-list>div,
+.estate-all-fields-list>div{
+  grid-template-columns:172px minmax(0,1fr);
+}
+.estate-summary-list dt,
+.estate-all-fields-list dt{
+  padding:12px 16px;
+  background:#fbf7f1;
+  color:#735f49;
+  font-size:.79rem;
+}
+.estate-summary-list dd,
+.estate-all-fields-list dd{
+  padding:12px 16px;
+  color:#425269;
+  font-size:.84rem;
+}
+.estate-summary-list dd strong{
+  font-size:1.08rem;
+}
+
+/* compact horizontal photo slider */
+.estate-photo-rail{
+  display:flex;
+  gap:10px;
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:2px 2px 9px;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:thin;
+  overscroll-behavior-inline:contain;
+}
+.estate-photo-thumb{
+  position:relative;
+  flex:0 0 250px;
+  height:178px;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  border:1px solid #dbe3eb;
+  border-radius:13px;
+  background:#eef2f5;
+  cursor:zoom-in;
+  scroll-snap-align:start;
+}
+.estate-photo-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.estate-photo-thumb span{
+  position:absolute;
+  right:8px;
+  bottom:7px;
+  padding:3px 7px;
+  border-radius:999px;
+  background:rgba(25,39,57,.76);
+  color:#fff;
+  font-size:.65rem;
+  font-weight:900;
+}
+.estate-photo-thumb:hover{
+  border-color:#b7c7d7;
+}
+.estate-photo-thumb:focus-visible{
+  outline:3px solid rgba(36,111,189,.28);
+  outline-offset:2px;
+}
+
+/* exact-photo lightbox */
+.estate-photo-dialog{
+  width:min(1100px,96vw);
+  max-width:none;
+  padding:0;
+  border:0;
+  border-radius:15px;
+  background:transparent;
+  overflow:visible;
+}
+.estate-photo-dialog::backdrop{
+  background:rgba(16,24,36,.84);
+}
+.estate-photo-dialog-inner{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:200px;
+}
+.estate-photo-dialog img{
+  display:block;
+  max-width:94vw;
+  max-height:88vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:9px;
+  background:#111;
+  box-shadow:0 16px 60px rgba(0,0,0,.35);
+}
+.estate-photo-close,
+.estate-photo-prev,
+.estate-photo-next{
+  position:absolute;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  border:0;
+  color:#fff;
+  background:rgba(18,28,42,.72);
+  cursor:pointer;
+}
+.estate-photo-close{
+  top:10px;
+  right:10px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:1.35rem;
+}
+.estate-photo-prev,
+.estate-photo-next{
+  top:50%;
+  width:42px;
+  height:58px;
+  transform:translateY(-50%);
+  border-radius:10px;
+  font-size:2rem;
+}
+.estate-photo-prev{left:10px}
+.estate-photo-next{right:10px}
+.estate-photo-counter{
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  transform:translateX(-50%);
+  margin:0;
+  padding:4px 9px;
+  border-radius:999px;
+  background:rgba(18,28,42,.72);
+  color:#fff;
+  font-size:.7rem;
+  font-weight:900;
+}
+
+/* Company ACCESS style */
+.estate-location-grid{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:14px;
+  align-items:stretch;
+}
+.estate-location-card,
+.estate-map-card{
+  overflow:hidden;
+  border:1px solid #dfe6df;
+  border-radius:15px;
+  background:#fff;
+}
+.estate-location-card{
+  padding:5px 18px;
+}
+.estate-access-row{
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:14px;
+  padding:12px 0;
+  border-bottom:1px solid #e8eee9;
+}
+.estate-access-row:last-child{
+  border-bottom:0;
+}
+.estate-access-label{
+  color:#6d765f;
+  font-size:.78rem;
+  font-weight:900;
+}
+.estate-access-value{
+  color:#31435a;
+  font-size:.84rem;
+  line-height:1.65;
+}
+.estate-access-value strong{
+  font-size:.95rem;
+}
+.estate-map-card{
+  min-height:290px;
+}
+.estate-map-card iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:290px;
+  border:0;
+}
+
+@media(max-width:900px){
+  .estate-location-grid{
+    grid-template-columns:1fr;
+  }
+  .estate-map-card,
+  .estate-map-card iframe{
+    min-height:270px;
+  }
+}
+@media(max-width:760px){
+  .estate-section-title-split{
+    display:block;
+  }
+  .estate-section-note{
+    margin-top:4px;
+  }
+  .estate-photo-thumb{
+    flex-basis:205px;
+    height:146px;
+  }
+  .estate-summary-list>div,
+  .estate-all-fields-list>div{
+    grid-template-columns:112px minmax(0,1fr);
+  }
+  .estate-location-card{
+    padding:4px 14px;
+  }
+  .estate-access-row{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+  .estate-photo-prev,
+  .estate-photo-next{
+    width:36px;
+    height:50px;
+  }
+}
+@media(max-width:420px){
+  .estate-photo-thumb{
+    flex-basis:78vw;
+    height:auto;
+    aspect-ratio:4/3;
+  }
+}
+
+
+/* =========================================================
+   v78: detail typography aligned exactly with Company page
+   Company reference:
+   - section title: .67rem / clamp(1.25rem,2vw,1.6rem)
+   - table labels: .80rem / 900
+   - table values: .92rem / 600
+   - access values: .94rem / 600
+========================================================= */
+.estate-detail-page .estate-section-title{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:8px;
+}
+.estate-detail-page .estate-section-title > div{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+}
+.estate-detail-page .estate-eyebrow{
+  margin:0 !important;
+  color:#a86b24;
+  font-size:.67rem;
+  font-weight:900;
+  line-height:1 !important;
+  letter-spacing:.14em;
+  white-space:nowrap;
+}
+.estate-detail-page .estate-section-title h2{
+  margin:0 !important;
+  color:#273a54;
+  font-size:clamp(1.25rem,2vw,1.6rem);
+  font-weight:900;
+  line-height:1.3;
+  white-space:nowrap;
+}
+
+.estate-detail-page .estate-summary-list>div,
+.estate-detail-page .estate-all-fields-list>div{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  border-top:0;
+  border-bottom:1px solid #e8eee5;
+}
+.estate-detail-page .estate-summary-list>div:last-child,
+.estate-detail-page .estate-all-fields-list>div:last-child{
+  border-bottom:0;
+}
+.estate-detail-page .estate-summary-list dt,
+.estate-detail-page .estate-summary-list dd,
+.estate-detail-page .estate-all-fields-list dt,
+.estate-detail-page .estate-all-fields-list dd{
+  display:flex;
+  align-items:center;
+  min-height:42px;
+  margin:0;
+  padding:12px 16px;
+  box-sizing:border-box;
+}
+.estate-detail-page .estate-summary-list dt,
+.estate-detail-page .estate-all-fields-list dt{
+  color:#665b4e;
+  background:#fbf8f3;
+  font-size:.80rem;
+  font-weight:900;
+  line-height:1.5;
+}
+.estate-detail-page .estate-summary-list dd,
+.estate-detail-page .estate-all-fields-list dd{
+  color:#35465d;
+  font-size:.92rem;
+  font-weight:600;
+  line-height:1.65;
+}
+.estate-detail-page .estate-summary-list dd strong{
+  color:#a85f18;
+  font-size:1rem;
+  font-weight:900;
+}
+
+.estate-detail-page .estate-location-grid{
+  grid-template-columns:.92fr 1.08fr;
+  gap:14px;
+}
+.estate-detail-page .estate-location-card{
+  padding:0 16px;
+}
+.estate-detail-page .estate-access-row{
+  display:grid;
+  grid-template-columns:88px 1fr;
+  gap:14px;
+  padding:11px 0;
+  border-bottom:1px solid #e8eee5;
+}
+.estate-detail-page .estate-access-label{
+  display:flex;
+  align-items:center;
+  color:#64705f;
+  font-size:.78rem;
+  font-weight:900;
+  line-height:1.5;
+}
+.estate-detail-page .estate-access-value{
+  display:flex;
+  align-items:center;
+  min-height:50px;
+  margin:0;
+  padding:12px 14px;
+  color:#31435a;
+  font-size:.94rem;
+  font-weight:600;
+  line-height:1.65;
+  box-sizing:border-box;
+}
+.estate-detail-page .estate-access-value strong{
+  font-size:1rem;
+  font-weight:900;
+}
+
+@media(max-width:760px){
+  .estate-detail-page .estate-summary-list>div,
+  .estate-detail-page .estate-all-fields-list>div{
+    grid-template-columns:1fr;
+  }
+  .estate-detail-page .estate-summary-list dt,
+  .estate-detail-page .estate-all-fields-list dt{
+    padding-bottom:4px;
+  }
+  .estate-detail-page .estate-summary-list dd,
+  .estate-detail-page .estate-all-fields-list dd{
+    padding-top:4px;
+  }
+  .estate-detail-page .estate-location-grid{
+    grid-template-columns:1fr;
+  }
+  .estate-detail-page .estate-access-row{
+    grid-template-columns:88px 1fr;
+  }
+}
+@media(max-width:420px){
+  .estate-detail-page .estate-section-title h2{
+    font-size:1.25rem;
+  }
+  .estate-detail-page .estate-access-row{
+    grid-template-columns:78px 1fr;
+    gap:10px;
+  }
+  .estate-detail-page .estate-access-value{
+    padding:10px 8px;
+  }
+}
+
+
+/* =========================================================
+   v79: section headings strictly mirror Company effective CSS
+   Effective Company styling = company.css + shared Technote v45/v46.
+========================================================= */
+.estate-detail-page .estate-section-title{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:8px !important;
+  margin-bottom:8px !important;
+  white-space:normal !important;
+}
+.estate-detail-page .estate-section-title > div{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:8px !important;
+}
+.estate-detail-page .estate-section-title .estate-eyebrow{
+  display:flex !important;
+  align-items:center !important;
+  align-self:stretch !important;
+  flex:0 0 auto !important;
+  margin:0 !important;
+  color:#6f8167 !important;
+  font-size:.67rem !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  letter-spacing:.14em !important;
+  white-space:nowrap !important;
+}
+.estate-detail-page .estate-section-title h2{
+  display:flex !important;
+  align-items:center !important;
+  flex:0 0 auto !important;
+  margin:0 !important;
+  color:var(--ink) !important;
+  font-family:inherit !important;
+  font-size:clamp(1.25rem,2vw,1.6rem) !important;
+  font-weight:bold !important;
+  line-height:1.3 !important;
+  letter-spacing:normal !important;
+  white-space:nowrap !important;
+}
+
+/* Keep the right-side photo helper independent from the Company-style title pair. */
+.estate-detail-page .estate-section-title-split{
+  justify-content:space-between !important;
+}
+.estate-detail-page .estate-section-note{
+  flex:0 1 auto;
+  margin:0;
+  color:#8795a7;
+  font-size:.70rem;
+  font-weight:700;
+  line-height:1.5;
+  text-align:right;
+}
+
+/* PROFILE rows: copy Company's effective v43 sizing/centering. */
+.estate-detail-page .estate-summary-list>div,
+.estate-detail-page .estate-all-fields-list>div{
+  display:grid !important;
+  grid-template-columns:190px 1fr !important;
+  align-items:stretch !important;
+  min-height:50px !important;
+  border-bottom:1px solid #e8eee5 !important;
+}
+.estate-detail-page .estate-summary-list>div:last-child,
+.estate-detail-page .estate-all-fields-list>div:last-child{
+  border-bottom:0 !important;
+}
+.estate-detail-page .estate-summary-list dt,
+.estate-detail-page .estate-summary-list dd,
+.estate-detail-page .estate-all-fields-list dt,
+.estate-detail-page .estate-all-fields-list dd{
+  display:flex !important;
+  align-items:center !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:12px 16px !important;
+  line-height:1.75 !important;
+}
+.estate-detail-page .estate-summary-list dt,
+.estate-detail-page .estate-all-fields-list dt{
+  background:#f8faf6 !important;
+  color:#586552 !important;
+  font-size:.80rem !important;
+  font-weight:900 !important;
+}
+.estate-detail-page .estate-summary-list dd,
+.estate-detail-page .estate-all-fields-list dd{
+  color:var(--ink) !important;
+  font-size:.92rem !important;
+  font-weight:600 !important;
+}
+.estate-detail-page .estate-summary-list dd strong{
+  color:#a85f18 !important;
+  font-size:1rem !important;
+  font-weight:900 !important;
+}
+
+/* ACCESS rows: copy Company's effective v41/v43 structure exactly. */
+.estate-detail-page .estate-location-card{
+  padding:0 !important;
+  overflow:hidden !important;
+  border:1px solid #dfe6da !important;
+}
+.estate-detail-page .estate-access-row{
+  display:grid !important;
+  grid-template-columns:108px minmax(0,1fr) !important;
+  gap:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+  align-items:stretch !important;
+  min-height:50px !important;
+  border-bottom:1px solid #e8eee5 !important;
+}
+.estate-detail-page .estate-access-row:last-child{
+  border-bottom:0 !important;
+}
+.estate-detail-page .estate-access-label{
+  display:flex !important;
+  align-items:center !important;
+  height:100% !important;
+  min-height:50px !important;
+  margin:0 !important;
+  padding:12px 14px !important;
+  background:#f8faf6 !important;
+  color:#586552 !important;
+  font-size:.82rem !important;
+  font-weight:900 !important;
+  line-height:1.5 !important;
+}
+.estate-detail-page .estate-access-value{
+  display:flex !important;
+  align-items:center !important;
+  min-height:50px !important;
+  margin:0 !important;
+  padding:12px 14px !important;
+  color:var(--ink) !important;
+  font-size:.94rem !important;
+  font-weight:600 !important;
+  line-height:1.65 !important;
+}
+.estate-detail-page .estate-access-value strong{
+  font-size:1rem !important;
+  font-weight:900 !important;
+}
+.estate-detail-page .estate-map-card,
+.estate-detail-page .estate-map-card iframe{
+  min-height:344px !important;
+}
+
+@media(max-width:760px){
+  /* Company/Technote v46 explicitly keeps title pairs horizontal on mobile. */
+  .estate-detail-page .estate-section-title,
+  .estate-detail-page .estate-section-title > div{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+  }
+  .estate-detail-page .estate-section-title .estate-eyebrow,
+  .estate-detail-page .estate-section-title h2{
+    white-space:nowrap !important;
+  }
+  .estate-detail-page .estate-section-title-split{
+    flex-wrap:wrap !important;
+  }
+  .estate-detail-page .estate-section-note{
+    flex-basis:100%;
+    margin-top:3px;
+    text-align:left;
+  }
+  .estate-detail-page .estate-summary-list>div,
+  .estate-detail-page .estate-all-fields-list>div{
+    grid-template-columns:1fr !important;
+  }
+  .estate-detail-page .estate-summary-list dt,
+  .estate-detail-page .estate-all-fields-list dt{
+    padding-bottom:4px !important;
+  }
+  .estate-detail-page .estate-summary-list dd,
+  .estate-detail-page .estate-all-fields-list dd{
+    padding-top:4px !important;
+  }
+  .estate-detail-page .estate-access-row{
+    grid-template-columns:1fr !important;
+  }
+  .estate-detail-page .estate-access-label{
+    min-height:0 !important;
+    padding:8px 12px 4px !important;
+  }
+  .estate-detail-page .estate-access-value{
+    min-height:0 !important;
+    padding:5px 12px 10px !important;
+  }
+  .estate-detail-page .estate-map-card,
+  .estate-detail-page .estate-map-card iframe{
+    min-height:280px !important;
+  }
+}
+
+
+/* =========================================================
+   v80: SUMMARY + Google Map in one row
+========================================================= */
+.estate-detail-page .estate-summary-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+  gap:14px;
+  align-items:stretch;
+}
+.estate-detail-page .estate-summary-card,
+.estate-detail-page .estate-summary-map{
+  min-width:0;
+}
+.estate-detail-page .estate-summary-map{
+  min-height:100%;
+}
+.estate-detail-page .estate-summary-map iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:100%;
+  border:0;
+}
+@media(max-width:900px){
+  .estate-detail-page .estate-summary-grid{
+    grid-template-columns:1fr;
+  }
+  .estate-detail-page .estate-summary-map,
+  .estate-detail-page .estate-summary-map iframe{
+    min-height:280px;
+  }
+}
