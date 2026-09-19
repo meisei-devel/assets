@@ -39,39 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  /*
-   * Whole-card navigation.
-   * Existing real links keep their own destination (e.g. #Ubuntu category links).
-   * Clicking other parts of the card opens the article/property detail.
-   */
-  document.querySelectorAll('.article-card, .estate-card').forEach((card) => {
-    const primaryLink = card.matches('.article-card')
-      ? card.querySelector('h2 a')
-      : card.querySelector('h3 a');
-
-    if (!primaryLink || !primaryLink.href) return;
-
-    card.tabIndex = 0;
-    card.setAttribute('role', 'link');
-
-    card.addEventListener('click', (event) => {
-      if (event.target.closest('a, button, input, select, textarea, label')) {
-        return;
-      }
-      window.location.href = primaryLink.href;
-    });
-
-    card.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter') return;
-      if (event.target.closest('a, button, input, select, textarea, label')) {
-        return;
-      }
-      event.preventDefault();
-      window.location.href = primaryLink.href;
-    });
-  });
-
-
   document.querySelectorAll('.code-copy').forEach((button) => {
     button.addEventListener('click', async () => {
       const code = button.closest('.code-block')?.querySelector('code')?.innerText || '';

@@ -1863,20 +1863,4 @@
   }
 }
 
-/* v109: compact pagination for large result sets */
-.estate-pagination .pagination-ellipsis{
-  min-width:40px;
-  height:40px;
-  display:grid;
-  place-items:center;
-  color:#8a96a7;
-  font-size:.9rem;
-  font-weight:800;
-  user-select:none;
-}
-@media(max-width:760px){
-  .estate-pagination .pagination-ellipsis{
-    min-width:28px;
-    height:36px;
-  }
-}
+

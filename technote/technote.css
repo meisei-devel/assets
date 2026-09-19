@@ -25,9 +25,6 @@
 .card-cats{display:flex;flex-wrap:wrap;gap:3px 8px}
 .card-cats a{color:#7b8aa0;font-size:.66rem}.read-more{color:var(--blue);font-size:.7rem;font-weight:900;white-space:nowrap}
 .empty-state{padding:60px 20px;border:1px dashed #cdd9e5;border-radius:18px;text-align:center;color:var(--muted);background:#fafcff}
-.pagination{display:flex;justify-content:center;gap:6px;margin-top:34px;flex-wrap:wrap}
-.pagination a{min-width:40px;height:40px;padding:0 12px;display:grid;place-items:center;border:1px solid #d5e0eb;border-radius:10px;color:#50647d;background:#fff;font-size:.8rem;font-weight:800}
-.pagination a.current{border-color:var(--blue);background:var(--blue);color:#fff}
 
 /* detail */
 .article-detail{padding:42px 0 90px;background:#f8fafc}
@@ -122,8 +119,6 @@
 .card-meta{margin-bottom:10px}
 .article-card h2{margin-bottom:7px;font-size:1.06rem}
 .card-footer{padding-top:13px}
-.pagination{margin-top:14px}
-.pagination a{min-width:36px;height:36px}
 
 
 .article-detail{padding:24px 0 48px}

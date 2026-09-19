@@ -81,3 +81,17 @@ button,input,select,textarea{font:inherit}
   .technote-brand .divider{margin-left:2px}
   .technote-brand a{font-size:.82rem}
 }
+
+/* =========================================================
+   Shared pagination UI
+   Restored from the former technote shared stylesheet.
+========================================================= */
+.pagination{display:flex;justify-content:center;gap:6px;margin-top:34px;flex-wrap:wrap}
+.pagination a{min-width:40px;height:40px;padding:0 12px;display:grid;place-items:center;border:1px solid #d5e0eb;border-radius:10px;color:#50647d;background:#fff;font-size:.8rem;font-weight:800}
+.pagination a.current{border-color:var(--blue);background:var(--blue);color:#fff}
+.pagination .pagination-ellipsis{min-width:40px;height:40px;display:grid;place-items:center;color:#8a96a7;font-size:.9rem;font-weight:800;user-select:none}
+@media(max-width:760px){
+  .pagination{margin-top:14px}
+  .pagination a{min-width:36px;height:36px}
+  .pagination .pagination-ellipsis{min-width:28px;height:36px}
+}
