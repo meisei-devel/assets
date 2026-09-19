@@ -6,7 +6,7 @@
   --estate-line:#e6ddd2;
 }
 
-/* 共通ヘッダー・フッターは technote.css を使用 */
+/* 共通ヘッダー・フッターは /assets/common.css を使用 */
 .estate-page{background:#fff;color:var(--ink)}
 .estate-shell{width:min(var(--shell),calc(100% - 40px));margin:auto}
 
