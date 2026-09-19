@@ -52,6 +52,8 @@ button,input,select,textarea{font:inherit}
 .footer-jp{display:flex;align-items:center;gap:.3em}
 .footer-jp small{font-size:.84rem;line-height:1}
 .footer-jp strong{font-size:1.35rem;line-height:1}
+.footer-character-frame{width:46px;height:46px;margin-left:6px;align-self:center;flex:0 0 46px;border-radius:50%;overflow:hidden}
+.footer-character{display:block;width:100%;height:100%;object-fit:cover;transform:translate(1px,10px) scale(1.55);transform-origin:42% 26%}
 .footer-en{margin-top:3px;color:#d2e4f7;font-size:.62rem;font-weight:800;letter-spacing:.08em}
 .footer-inner nav{display:flex;gap:18px;flex-wrap:wrap}
 .footer-inner nav a{font-size:.76rem}
@@ -75,6 +77,8 @@ button,input,select,textarea{font:inherit}
   .site-nav.open{display:flex}
   .site-nav a{text-align:left;padding:11px 18px;border-bottom:1px solid #edf1f5}
   .footer-inner{flex-direction:column}
+  .footer-character-frame{width:40px;height:40px;margin-left:4px;flex-basis:40px}
+  .footer-character{transform:translate(1px,9px) scale(1.55)}
 }
 @media(max-width:480px){
   .shell,.header-inner,.footer-inner{width:calc(100% - 24px)}
