@@ -1334,22 +1334,6 @@
 
 
 /* =========================================================
-   v52: narrow mobile header
-========================================================= */
-
-/*
- * iPhone SEクラスの狭幅では、ヘッダ内の
- * 「技術ノート」「会社案内」「不動産情報」等のセクション名を省略する。
- * ページ直下のタイトルで内容は十分分かるため、MENUを確実に収める。
- */
-@media(max-width:390px){
-  .technote-brand{
-    display:none !important;
-  }
-}
-
-
-/* =========================================================
    v55: mobile WebKit/Chrome code-snippet font fix
 ========================================================= */
 
@@ -1469,4 +1453,25 @@
 .article-card:focus-visible{
   outline:3px solid rgba(38,110,190,.35);
   outline-offset:2px;
+}
+
+/* =========================================================
+   v119: list / pagination vertical rhythm = Estate
+   Estate reference:
+     desktop: list section bottom 36px, pagination gap 14px
+     mobile : list section bottom 28px, pagination gap 14px
+========================================================= */
+.article-list-section{
+  padding:14px 0 36px !important;
+}
+.article-list-section .pagination{
+  margin-top:14px !important;
+}
+@media(max-width:760px){
+  .article-list-section{
+    padding:10px 0 28px !important;
+  }
+  .article-list-section .pagination{
+    margin-top:14px !important;
+  }
 }
