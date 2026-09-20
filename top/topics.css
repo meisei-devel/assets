@@ -1,0 +1,59 @@
+/* NEWS & TOPICS: title rhythm intentionally matches Estate / Technote. */
+.topics-hero{
+  padding:24px 0 14px;
+  background:linear-gradient(180deg,#edf5fc 0,#f8fbfe 78%,#fff 100%);
+}
+.topics-hero .kicker{
+  margin:0 0 4px;
+  font-size:.73rem;
+  line-height:normal;
+}
+.topics-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:0;
+}
+.topics-title-row h1{
+  margin:0;
+  font-size:clamp(2.2rem,3.8vw,3.5rem);
+  line-height:1.2;
+  letter-spacing:.01em;
+}
+.topics-title-row p{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  font-weight:700;
+  line-height:1.55;
+}
+
+.topics-list-section{padding:14px 0 36px}
+.topics-list{border-top:1px solid #dce6f0}
+.topics-row{display:grid;grid-template-columns:110px 94px minmax(0,1fr);gap:16px;align-items:start;padding:14px 0;border-bottom:1px solid #e4ebf2}
+.topics-row time{color:#75859a;font-size:.8rem;font-weight:800}
+.topics-category{display:inline-flex;justify-content:center;padding:3px 7px;border-radius:999px;font-size:.7rem;font-weight:900;background:#edf3f8;color:#61758e}
+.topics-category.type-estate{background:#f7eee1;color:#986022}
+.topics-category.type-technote{background:#eaf4ff;color:#2a71bd}
+.topics-category.type-manual{background:#f1ecf7;color:#735b91}
+.topics-row p{margin:0;font-size:.9rem;font-weight:700;line-height:1.7}
+.topics-row p a{color:#245e9e;text-decoration:underline;text-decoration-color:#c1d5eb;text-underline-offset:3px}
+.topics-empty{padding:30px;border:1px dashed #cad7e4;border-radius:12px;color:var(--muted)}
+
+@media(max-width:760px){
+  .topics-hero{padding:18px 0 10px}
+  .topics-title-row{display:block;margin-bottom:0}
+  .topics-title-row h1{font-size:clamp(2rem,10vw,2.8rem)}
+  .topics-title-row p{margin-top:5px}
+  .topics-list-section{padding:10px 0 28px}
+  .topics-row{grid-template-columns:82px 82px minmax(0,1fr);gap:8px}
+  .topics-category{font-size:.64rem}
+  .topics-row p{font-size:.82rem}
+}
+@media(max-width:520px){
+  .topics-row{grid-template-columns:78px minmax(0,1fr)}
+  .topics-category{grid-column:1}
+  .topics-row p{grid-column:2;grid-row:1 / span 2}
+}

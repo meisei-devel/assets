@@ -36,9 +36,6 @@ button,input,select,textarea{font:inherit}
 .brand-jp strong{font-size:1.45rem;line-height:1;letter-spacing:.04em}
 .brand-en{margin-top:4px;color:var(--blue);font-size:.57rem;font-weight:900;letter-spacing:.08em}
 .brand-en-short{display:none}
-.technote-brand{display:flex;align-items:center;gap:18px;font-weight:900;white-space:nowrap}
-.technote-brand .divider{width:1px;height:34px;background:#dbe4ed}
-.technote-brand a{font-size:1.06rem}
 .site-nav{margin-left:auto;display:flex;align-items:center}
 .site-nav a{padding:12px 14px;font-size:.82rem;font-weight:800;color:#5b6b80}
 .site-nav a.current,.site-nav a:hover{color:var(--blue)}
@@ -69,8 +66,6 @@ button,input,select,textarea{font:inherit}
   .brand-mark{width:40px;height:40px;flex-basis:40px}
   .brand-jp small{font-size:.76rem}
   .brand-jp strong{font-size:1.22rem}
-  .technote-brand{font-size:.82rem}
-  .technote-brand .divider{height:28px}
   .menu-button{display:block;position:relative;margin-left:auto;width:40px;height:40px;flex:0 0 40px;padding:0;border:1px solid #cbd8e5;border-radius:8px;background:#fff;color:transparent;font-size:0;overflow:hidden}
   .menu-button::before{content:"";position:absolute;left:10px;right:10px;top:12px;height:2px;border-radius:2px;background:var(--blue);box-shadow:0 7px 0 var(--blue),0 14px 0 var(--blue)}
   .site-nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid #dfe7ef}
@@ -83,8 +78,6 @@ button,input,select,textarea{font:inherit}
 @media(max-width:480px){
   .shell,.header-inner,.footer-inner{width:calc(100% - 24px)}
   .brand-en{display:none}
-  .technote-brand .divider{margin-left:2px}
-  .technote-brand a{font-size:.82rem}
 }
 
 /* =========================================================
